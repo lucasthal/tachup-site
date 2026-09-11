@@ -19,17 +19,16 @@
     .fg { position: relative; }
     .disp { font-family: Outfit, "Segoe UI", Helvetica, Arial, sans-serif; letter-spacing: -0.01em; }
     .glass { background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5); border: 1.5px solid rgba(255,255,255,0.9); border-radius: 24px; box-shadow: 0 18px 40px rgba(12,40,90,0.18), inset 0 1px 0 rgba(255,255,255,0.9); }
-    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 58px; border-radius: 20px; font-family: Outfit, sans-serif; font-weight: 800; font-size: 20px; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.18); position: relative; overflow: hidden; }
-    .btn:after { content: ""; position: absolute; left: 6%; right: 6%; top: 4px; height: 40%; border-radius: 999px; background: linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0)); }
-    .gel-orange { background: linear-gradient(180deg, #FF9A4D 0%, #FF7A2F 55%, #D45C18 100%); box-shadow: 0 10px 26px rgba(255,122,47,0.55), inset 0 -3px 0 rgba(0,0,0,0.15); }
-    .gel-teal { background: linear-gradient(180deg, #4ADFCB 0%, #19C2AE 55%, #0D8C7D 100%); box-shadow: 0 10px 26px rgba(25,194,174,0.5), inset 0 -3px 0 rgba(0,0,0,0.15); }
-    .gel-glass { background: rgba(255,255,255,0.55); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1.5px solid rgba(255,255,255,0.9); color: #14213A; text-shadow: none; box-shadow: 0 10px 24px rgba(12,40,90,0.14); }
-    .opt { display: flex; align-items: center; gap: 12px; min-height: 62px; padding: 12px 14px; border-radius: 20px; background: rgba(255,255,255,0.6); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1.5px solid rgba(255,255,255,0.9); box-shadow: 0 8px 22px rgba(12,40,90,0.12); font-size: 16.5px; font-weight: 700; line-height: 1.25; box-sizing: border-box; }
+    .btn { display: flex; align-items: center; justify-content: center; gap: 10px; height: 56px; border-radius: 16px; font-family: Outfit, sans-serif; font-weight: 700; font-size: 18px; letter-spacing: 0.005em; color: #fff; position: relative; }
+    .gel-orange { background: #FF7A2F; box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 1px 2px rgba(20,33,58,0.18), 0 10px 22px -12px rgba(212,92,24,0.9); }
+    .gel-teal { background: #19C2AE; box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 1px 2px rgba(20,33,58,0.18), 0 10px 22px -12px rgba(13,140,125,0.9); }
+    .gel-glass { background: rgba(255,255,255,0.88); color: #14213A; border: 1px solid rgba(20,33,58,0.10); box-shadow: 0 1px 2px rgba(20,33,58,0.10), 0 10px 22px -14px rgba(12,40,90,0.5); }
+    .opt { display: flex; align-items: center; gap: 12px; min-height: 62px; padding: 12px 14px; border-radius: 20px; background: rgba(255,255,255,0.6); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); border: 1px solid rgba(20,33,58,0.10); box-shadow: 0 1px 2px rgba(20,33,58,0.06), 0 8px 18px -12px rgba(12,40,90,0.4); font-size: 16.5px; font-weight: 700; line-height: 1.25; box-sizing: border-box; }
     .opt .k { width: 32px; height: 32px; border-radius: 11px; background: linear-gradient(180deg, #fff, #E6F0FA); box-shadow: inset 0 0 0 1.5px rgba(20,33,58,0.15); display: flex; align-items: center; justify-content: center; font-family: Outfit, sans-serif; font-weight: 800; font-size: 16px; flex: none; }
-    .dock { margin: 0 14px 18px; height: 66px; border-radius: 26px; display: flex; align-items: center; padding: 0 6px; background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(20px) saturate(1.5); backdrop-filter: blur(20px) saturate(1.5); border: 1.5px solid rgba(255,255,255,0.9); box-shadow: 0 14px 34px rgba(12,40,90,0.2); }
+    .dock { margin: 0 14px 18px; height: 66px; border-radius: 26px; display: flex; align-items: center; padding: 0 6px; background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(20px) saturate(1.5); backdrop-filter: blur(20px) saturate(1.5); border: 1px solid rgba(255,255,255,0.8); box-shadow: 0 1px 2px rgba(20,33,58,0.08), 0 16px 30px -18px rgba(12,40,90,0.6); }
     .tab { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; flex: 1; height: 54px; border-radius: 20px; font-family: Outfit, sans-serif; font-size: 12px; font-weight: 700; color: #6F7F99; }
-    .tab.on { color: #fff; background: linear-gradient(180deg, #FF9A4D, #D45C18); box-shadow: 0 8px 18px rgba(255,122,47,0.55); }
-    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1.5px solid rgba(255,255,255,0.9); font-size: 13px; font-weight: 800; box-shadow: 0 6px 16px rgba(12,40,90,0.12); }
+    .tab.on { color: #fff; background: #FF7A2F; box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 6px 14px -8px rgba(212,92,24,0.9); }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,0.62); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.85); font-size: 13px; font-weight: 800; box-shadow: 0 1px 2px rgba(20,33,58,0.08); }
     .bubble { position: relative; background: rgba(255,255,255,0.7); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border: 1.5px solid rgba(255,255,255,0.9); border-radius: 20px; padding: 12px 14px; font-size: 14.5px; font-weight: 700; line-height: 1.4; box-shadow: 0 12px 28px rgba(12,40,90,0.16); }
     .bubble:after { content: ""; position: absolute; left: -12px; bottom: 20px; width: 0; height: 0; border-top: 10px solid transparent; border-bottom: 10px solid transparent; border-right: 12px solid rgba(255,255,255,0.75); }
     .aura { position: relative; display: inline-block; }
@@ -127,7 +126,7 @@
       <textarea id="note" placeholder="If you flag it, say why in a sentence (required for flags). Optional for approvals."></textarea>
       <div class="row" style="margin-top: 10px;">
         <div class="btn gel-teal" id="approve">Approve</div>
-        <div class="btn" id="flag" style="background: linear-gradient(180deg, #FF7A8A 0%, #F0475C 55%, #B12A3C 100%); box-shadow: 0 10px 26px rgba(240,71,92,0.45), inset 0 -3px 0 rgba(0,0,0,0.15);">Flag</div>
+        <div class="btn" id="flag" style="background: #F0475C; box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 1px 2px rgba(20,33,58,0.18), 0 10px 22px -12px rgba(177,42,60,0.9);">Flag</div>
       </div>
       <div class="nav">
         <div class="btn gel-glass small" id="prev">&lsaquo; Prev</div>
