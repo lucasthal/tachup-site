@@ -1,0 +1,2 @@
+# the bundles are served byte for byte: their sha256s are in each manifest (and a folder is named by its manifest's)
+* -text

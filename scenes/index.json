@@ -1,0 +1,78 @@
+{
+ "version": 1,
+ "baseUrl": "https://lucasthal.github.io/tachup-site/scenes",
+ "scenes": [
+  {
+   "id": "coastal",
+   "name": "Coastal town",
+   "dir": "coastal/6c2890d89bc4",
+   "bytes": 1647385,
+   "manifestSha256": "6c2890d89bc47f44187b24d6fcff189c9789d23a718e62ed01b9e46a38e5a5a6",
+   "fieldElevationFt": 20.0
+  },
+  {
+   "id": "desert",
+   "name": "Desert mesas",
+   "dir": "desert/c84c4a4b6cec",
+   "bytes": 1159498,
+   "manifestSha256": "c84c4a4b6cec30b27f9698cea7ec49b030bb0f8d21e33304acd540cdf474b387",
+   "fieldElevationFt": 2300.0
+  },
+  {
+   "id": "lakeside",
+   "name": "Lakeside",
+   "dir": "lakeside/e0c296ebf8b1",
+   "bytes": 2267139,
+   "manifestSha256": "e0c296ebf8b11d8207afa0b6b4881b91f19f94ed256c034952eac26fedc99aff",
+   "fieldElevationFt": 900.0
+  },
+  {
+   "id": "city",
+   "name": "City reliever",
+   "dir": "city/574e0ba99943",
+   "bytes": 2798913,
+   "manifestSha256": "574e0ba999437829c5af75de21fc84a4f89ecf686ab2ec6c9acff1cca8ec8d2b",
+   "fieldElevationFt": 600.0
+  },
+  {
+   "id": "delta",
+   "name": "River delta",
+   "dir": "delta/fd7cc3de02ac",
+   "bytes": 1542025,
+   "manifestSha256": "fd7cc3de02ac8f8e0461ec80ba4cc07875343fccede61f8a5c757a2420e3539d",
+   "fieldElevationFt": 10.0
+  },
+  {
+   "id": "island",
+   "name": "Island strip",
+   "dir": "island/c1dabe78f849",
+   "bytes": 1454887,
+   "manifestSha256": "c1dabe78f849bf91fe53b8aebd259bce0e51ae6efe3d320e9d5064f7bab08f6f",
+   "fieldElevationFt": 30.0
+  },
+  {
+   "id": "forest",
+   "name": "North woods",
+   "dir": "forest/ceae7035103f",
+   "bytes": 2041679,
+   "manifestSha256": "ceae7035103fafb9a3c54af0633b4788b16a35a0808b424bd04416ae2aa8152a",
+   "fieldElevationFt": 2600.0
+  },
+  {
+   "id": "prairie",
+   "name": "Prairie",
+   "dir": "prairie/4537794154fe",
+   "bytes": 2264645,
+   "manifestSha256": "4537794154fef55e4816ea4c72b683f0734faf7447025577fc40fd6856094634",
+   "fieldElevationFt": 1800.0
+  },
+  {
+   "id": "farmland",
+   "name": "Farmland",
+   "dir": "farmland/707dd5ffed52",
+   "bytes": 1345752,
+   "manifestSha256": "707dd5ffed52be8f00ad9db1f42fc8d622b58e41b75dccf0da566c03ad66432d",
+   "fieldElevationFt": 700.0
+  }
+ ]
+}
