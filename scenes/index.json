@@ -13,9 +13,9 @@
   {
    "id": "desert",
    "name": "Desert mesas",
-   "dir": "desert/c84c4a4b6cec",
-   "bytes": 1159498,
-   "manifestSha256": "c84c4a4b6cec30b27f9698cea7ec49b030bb0f8d21e33304acd540cdf474b387",
+   "dir": "desert/c5ff657053dc",
+   "bytes": 1159305,
+   "manifestSha256": "c5ff657053dcbbe19696771680c77587694d0e0d5f7844f4ef4f4647682bc367",
    "fieldElevationFt": 2300.0
   },
   {
