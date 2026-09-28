@@ -5,10 +5,10 @@
   {
    "id": "coastal",
    "name": "Coastal town",
-   "dir": "coastal/6c2890d89bc4",
-   "bytes": 1647385,
-   "manifestSha256": "6c2890d89bc47f44187b24d6fcff189c9789d23a718e62ed01b9e46a38e5a5a6",
-   "fieldElevationFt": 20.0
+   "dir": "coastal/23041f4907ce",
+   "bytes": 7490874,
+   "manifestSha256": "23041f4907ceea07f0d354ee7073751bda0cf012abb69e62ce7f7d5a1791d413",
+   "fieldElevationFt": 17.0
   },
   {
    "id": "desert",
