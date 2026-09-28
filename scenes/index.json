@@ -29,10 +29,10 @@
   {
    "id": "city",
    "name": "City reliever",
-   "dir": "city/cbbec778976d",
-   "bytes": 2819473,
-   "manifestSha256": "cbbec778976d38c7a5546c6859a83e56f58b4aba8a574c6923afd0ef281a402f",
-   "fieldElevationFt": 600.0
+   "dir": "city/5f0e30335df7",
+   "bytes": 6252325,
+   "manifestSha256": "5f0e30335df77b2c89d42a401193812532680822243d49df56ec48ba8c91da57",
+   "fieldElevationFt": 21.0
   },
   {
    "id": "delta",
