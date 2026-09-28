@@ -1,0 +1,1567 @@
+{
+ "version": 2,
+ "scene": "city",
+ "source": "city-overview.json",
+ "generator": "content/art/render/bake_scene.py",
+ "units": "feet; x east, y north, z up; angles in degrees true",
+ "bounds": {
+  "min": [
+   -72000,
+   -46000,
+   -20.0
+  ],
+  "max": [
+   72000,
+   44000,
+   1072.0
+  ]
+ },
+ "fieldElevationFt": 21.0,
+ "sun": {
+  "dir": [
+   0.8210892183528176,
+   -0.3655724732082386,
+   0.4383711467890774
+  ],
+  "az": 114,
+  "el": 26,
+  "note": "dir points toward the sun"
+ },
+ "lighting": {
+  "formula": "lit = albedo * (sun.color * sun.intensity * light.sun + sky.irradiance * light.sky); then fog, then the grade",
+  "light.sun": "sun term (its own greyscale WebP, one per tier/atlas): cos(incidence) x shadow, linear 0..1 (1 = the sun square on; baked with a sun of 1.2 deg, the fair sky's)",
+  "light.sky": "sky term (its own greyscale WebP, one per tier/atlas): occlusion + one bounce under a white zenith-bright dome (CIE overcast shape), 1 = open flat ground, linear",
+  "albedo": "sRGB-encoded colour of the surface with no light: the terrain tiers for the terrain, COLOR_0 (linear) for land.glb",
+  "cyclesSunPerUnit": 0.3183533304829829,
+  "domeOnFlatGround": 1.0017828941345215,
+  "checks": "sun.intensity = LOOK.sun x 0.31835 (Cycles: a sun of 1 lights a white square-on surface to 1/pi); sky.irradiance = what each sky state's own Cycles world puts on open flat white ground, measured"
+ },
+ "skies": {
+  "fair": {
+   "state": 0,
+   "sun": {
+    "color": [
+     1.0,
+     0.72306,
+     0.4452
+    ],
+    "intensity": 1.36892,
+    "softDeg": 1.2
+   },
+   "sky": {
+    "irradiance": [
+     0.17707,
+     0.30348,
+     0.52945
+    ],
+    "color": [
+     0.33444,
+     0.5732,
+     1.0
+    ],
+    "intensity": 0.52945
+   },
+   "fog": {
+    "haze": [
+     0.90466,
+     0.73046,
+     0.55201
+    ],
+    "air": [
+     0.47353,
+     0.5972,
+     0.76052
+    ],
+    "scaleLengthFt": 29000,
+    "heightFalloffFt": 9000,
+    "exponent": 1.6,
+    "max": 0.86,
+    "farBlendFt": [
+     2500,
+     30000
+    ],
+    "skyBlueMix": 0.35,
+    "formula": "f = min(max, 1 - exp(-(d / (scaleLengthFt * (1 + max(z, 0) / heightFalloffFt)))^exponent)); fogColour = mix(haze, mix(skyBehindPoint, air, skyBlueMix), smoothstep(farBlendFt, d)); out = mix(lit, fogColour, f)"
+   },
+   "skyGradient": [
+    [
+     0,
+     [
+      0.01298,
+      0.15896,
+      0.69387
+     ]
+    ],
+    [
+     0.36,
+     [
+      0.07819,
+      0.45079,
+      1.0
+     ]
+    ],
+    [
+     0.65,
+     [
+      0.39676,
+      0.75294,
+      1.0
+     ]
+    ],
+    [
+     1,
+     [
+      1.0,
+      0.76815,
+      0.55201
+     ]
+    ]
+   ],
+   "saturation": 1.0,
+   "wet": false,
+   "rain": false,
+   "deck": null,
+   "haze": [
+    0.93011,
+    0.75294,
+    0.56471
+   ],
+   "grade": {
+    "gain": [
+     1.03,
+     1,
+     0.96
+    ],
+    "lift": [
+     0.03,
+     0.02,
+     0.05
+    ],
+    "saturation": 1.06,
+    "grain": 0.035,
+    "vignette": 0.22,
+    "bloom": {
+     "x": 390,
+     "y": 844,
+     "r": 520,
+     "color": "#FFE7C2",
+     "strength": 0.1
+    }
+   }
+  },
+  "veil": {
+   "state": 0.2,
+   "sun": {
+    "color": [
+     1.0,
+     0.81485,
+     0.63076
+    ],
+    "intensity": 0.82772,
+    "softDeg": 6
+   },
+   "sky": {
+    "irradiance": [
+     0.229,
+     0.39266,
+     0.68519
+    ],
+    "color": [
+     0.33421,
+     0.57307,
+     1.0
+    ],
+    "intensity": 0.68519
+   },
+   "fog": {
+    "haze": [
+     0.85499,
+     0.76815,
+     0.65141
+    ],
+    "air": [
+     0.58408,
+     0.64448,
+     0.71569
+    ],
+    "scaleLengthFt": 23000,
+    "heightFalloffFt": 8000,
+    "exponent": 1.6,
+    "max": 0.88,
+    "farBlendFt": [
+     2500,
+     30000
+    ],
+    "skyBlueMix": 0.35,
+    "formula": "f = min(max, 1 - exp(-(d / (scaleLengthFt * (1 + max(z, 0) / heightFalloffFt)))^exponent)); fogColour = mix(haze, mix(skyBehindPoint, air, skyBlueMix), smoothstep(farBlendFt, d)); out = mix(lit, fogColour, f)"
+   },
+   "skyGradient": [
+    [
+     0,
+     [
+      0.15896,
+      0.37124,
+      0.73046
+     ]
+    ],
+    [
+     0.4,
+     [
+      0.33245,
+      0.56471,
+      0.8388
+     ]
+    ],
+    [
+     0.75,
+     [
+      0.65141,
+      0.77582,
+      0.87137
+     ]
+    ],
+    [
+     1,
+     [
+      0.87962,
+      0.7913,
+      0.68669
+     ]
+    ]
+   ],
+   "saturation": 0.94,
+   "wet": false,
+   "rain": false,
+   "deck": null,
+   "haze": [
+    0.83077,
+    0.70838,
+    0.57112
+   ],
+   "grade": {
+    "gain": [
+     1.02,
+     1,
+     0.98
+    ],
+    "lift": [
+     0.04,
+     0.04,
+     0.06
+    ],
+    "saturation": 0.96,
+    "grain": 0.035,
+    "vignette": 0.2,
+    "bloom": {
+     "x": 390,
+     "y": 844,
+     "r": 480,
+     "color": "#FFF1DE",
+     "strength": 0.08
+    }
+   }
+  },
+  "building": {
+   "state": 0.55,
+   "sun": {
+    "color": [
+     1.0,
+     0.87137,
+     0.73046
+    ],
+    "intensity": 0.44569,
+    "softDeg": 10
+   },
+   "sky": {
+    "irradiance": [
+     0.29135,
+     0.49961,
+     0.87193
+    ],
+    "color": [
+     0.33414,
+     0.57299,
+     1.0
+    ],
+    "intensity": 0.87193
+   },
+   "fog": {
+    "haze": [
+     0.67954,
+     0.67954,
+     0.64448
+    ],
+    "air": [
+     0.54572,
+     0.59062,
+     0.64448
+    ],
+    "scaleLengthFt": 19000,
+    "heightFalloffFt": 7000,
+    "exponent": 1.6,
+    "max": 0.9,
+    "farBlendFt": [
+     2500,
+     30000
+    ],
+    "skyBlueMix": 0.35,
+    "formula": "f = min(max, 1 - exp(-(d / (scaleLengthFt * (1 + max(z, 0) / heightFalloffFt)))^exponent)); fogColour = mix(haze, mix(skyBehindPoint, air, skyBlueMix), smoothstep(farBlendFt, d)); out = mix(lit, fogColour, f)"
+   },
+   "skyGradient": [
+    [
+     0,
+     [
+      0.25415,
+      0.3467,
+      0.47932
+     ]
+    ],
+    [
+     0.5,
+     [
+      0.42869,
+      0.52712,
+      0.63076
+     ]
+    ],
+    [
+     1,
+     [
+      0.76052,
+      0.72306,
+      0.64448
+     ]
+    ]
+   ],
+   "saturation": 0.88,
+   "wet": false,
+   "rain": false,
+   "deck": {
+    "base": 5200,
+    "cover": 0.45,
+    "col": "#C9D0D8",
+    "dark": "#9AA6B4"
+   },
+   "haze": [
+    0.66539,
+    0.6376,
+    0.58408
+   ],
+   "grade": {
+    "gain": [
+     0.99,
+     1,
+     1.02
+    ],
+    "lift": [
+     0.04,
+     0.05,
+     0.07
+    ],
+    "saturation": 0.9,
+    "grain": 0.04,
+    "vignette": 0.26,
+    "bloom": null
+   }
+  },
+  "lowering": {
+   "state": 1,
+   "sun": {
+    "color": [
+     0.85499,
+     0.87137,
+     0.88792
+    ],
+    "intensity": 0.11142,
+    "softDeg": 25
+   },
+   "sky": {
+    "irradiance": [
+     0.7094,
+     0.78531,
+     0.87497
+    ],
+    "color": [
+     0.81077,
+     0.89753,
+     1.0
+    ],
+    "intensity": 0.87497
+   },
+   "fog": {
+    "haze": [
+     0.49102,
+     0.54572,
+     0.5972
+    ],
+    "air": [
+     0.43415,
+     0.49102,
+     0.55834
+    ],
+    "scaleLengthFt": 15000,
+    "heightFalloffFt": 6000,
+    "exponent": 1.6,
+    "max": 0.92,
+    "farBlendFt": [
+     2500,
+     30000
+    ],
+    "skyBlueMix": 0.35,
+    "formula": "f = min(max, 1 - exp(-(d / (scaleLengthFt * (1 + max(z, 0) / heightFalloffFt)))^exponent)); fogColour = mix(haze, mix(skyBehindPoint, air, skyBlueMix), smoothstep(farBlendFt, d)); out = mix(lit, fogColour, f)"
+   },
+   "skyGradient": [
+    [
+     0,
+     [
+      0.20864,
+      0.25818,
+      0.33245
+     ]
+    ],
+    [
+     0.7,
+     [
+      0.39157,
+      0.45079,
+      0.521
+     ]
+    ],
+    [
+     1,
+     [
+      0.49102,
+      0.54572,
+      0.5972
+     ]
+    ]
+   ],
+   "saturation": 0.8,
+   "wet": true,
+   "rain": false,
+   "deck": {
+    "base": 2500,
+    "cover": 0.85,
+    "col": "#9DA8B5",
+    "dark": "#6F7C8E"
+   },
+   "haze": [
+    0.48515,
+    0.54572,
+    0.5972
+   ],
+   "grade": {
+    "gain": [
+     0.97,
+     0.99,
+     1.03
+    ],
+    "lift": [
+     0.05,
+     0.06,
+     0.08
+    ],
+    "saturation": 0.84,
+    "grain": 0.04,
+    "vignette": 0.3,
+    "bloom": null
+   }
+  },
+  "weather": {
+   "state": 1,
+   "sun": {
+    "color": [
+     0.80695,
+     0.84687,
+     0.88792
+    ],
+    "intensity": 0.06367,
+    "softDeg": 30
+   },
+   "sky": {
+    "irradiance": [
+     0.6377,
+     0.71453,
+     0.7965
+    ],
+    "color": [
+     0.80063,
+     0.89709,
+     1.0
+    ],
+    "intensity": 0.7965
+   },
+   "fog": {
+    "haze": [
+     0.48515,
+     0.54572,
+     0.5972
+    ],
+    "air": [
+     0.42327,
+     0.47932,
+     0.54572
+    ],
+    "scaleLengthFt": 15500,
+    "heightFalloffFt": 6000,
+    "exponent": 1.6,
+    "max": 0.92,
+    "farBlendFt": [
+     2500,
+     30000
+    ],
+    "skyBlueMix": 0.35,
+    "formula": "f = min(max, 1 - exp(-(d / (scaleLengthFt * (1 + max(z, 0) / heightFalloffFt)))^exponent)); fogColour = mix(haze, mix(skyBehindPoint, air, skyBlueMix), smoothstep(farBlendFt, d)); out = mix(lit, fogColour, f)"
+   },
+   "skyGradient": [
+    [
+     0,
+     [
+      0.20864,
+      0.25818,
+      0.33245
+     ]
+    ],
+    [
+     0.7,
+     [
+      0.45641,
+      0.51492,
+      0.57758
+     ]
+    ],
+    [
+     1,
+     [
+      0.48515,
+      0.54572,
+      0.5972
+     ]
+    ]
+   ],
+   "saturation": 0.8,
+   "wet": true,
+   "rain": true,
+   "deck": {
+    "base": 2500,
+    "cover": 0.95,
+    "col": "#A3AEBB",
+    "dark": "#667488"
+   },
+   "haze": [
+    0.48515,
+    0.54572,
+    0.5972
+   ],
+   "grade": {
+    "gain": [
+     0.96,
+     0.99,
+     1.04
+    ],
+    "lift": [
+     0.05,
+     0.06,
+     0.08
+    ],
+    "saturation": 0.82,
+    "grain": 0.042,
+    "vignette": 0.32,
+    "bloom": null
+   }
+  }
+ },
+ "anchor": {
+  "runway": {
+   "centre": [
+    -3057.5,
+    0.0,
+    2.6
+   ],
+   "lengthFt": 9115,
+   "widthFt": 150,
+   "headings": [
+    90,
+    270
+   ],
+   "ends": [
+    [
+     -7615,
+     0,
+     2.6
+    ],
+    [
+     1500,
+     0,
+     2.6
+    ]
+   ]
+  },
+  "airfield": {
+   "rect": [
+    -2400,
+    -520,
+    2400,
+    1000
+   ]
+  },
+  "points": [
+   {
+    "id": "ramp",
+    "P": [
+     -350,
+     470,
+     0
+    ],
+    "screen": [
+     254.7,
+     331
+    ]
+   },
+   {
+    "id": "runup",
+    "P": [
+     1440,
+     157.9,
+     0
+    ],
+    "screen": [
+     264.4,
+     364.5
+    ]
+   },
+   {
+    "id": "crosswind",
+    "P": [
+     -7840.2,
+     -206.3,
+     770.8
+    ],
+    "screen": [
+     177,
+     223.1
+    ]
+   },
+   {
+    "id": "downwind",
+    "P": [
+     -2600,
+     -4800,
+     1000
+    ],
+    "screen": [
+     42.3,
+     276.3
+    ]
+   },
+   {
+    "id": "base",
+    "P": [
+     7086.9,
+     -242.1,
+     353.7
+    ],
+    "screen": [
+     359.8,
+     528
+    ]
+   },
+   {
+    "id": "final",
+    "P": [
+     2820,
+     0,
+     119.2
+    ],
+    "screen": [
+     277.9,
+     390.9
+    ]
+   }
+  ],
+  "parked": [
+   {
+    "model": "aircraft/cessna172-parked.glb",
+    "P": [
+     -560,
+     470,
+     0
+    ],
+    "hdg": 180
+   },
+   {
+    "model": "aircraft/cessna172-parked.glb",
+    "P": [
+     -490,
+     470,
+     0
+    ],
+    "hdg": 180
+   },
+   {
+    "model": "aircraft/cessna172-parked.glb",
+    "P": [
+     -420,
+     470,
+     0
+    ],
+    "hdg": 180
+   }
+  ],
+  "windsock": {
+   "P": [
+    -1150,
+    -260,
+    0
+   ],
+   "windFrom": 240
+  }
+ },
+ "terrain": {
+  "heights": {
+   "file": "heights.bin",
+   "format": "uint16 little-endian, row-major",
+   "nx": 481,
+   "ny": 301,
+   "origin": [
+    -72000,
+    -46000
+   ],
+   "spacingFt": 300,
+   "zOffset": -20.0,
+   "zScale": 1.0,
+   "minZ": -20.0,
+   "maxZ": 1072.0,
+   "height": "z = zOffset + zScale * value[j * nx + i] at x = origin.x + i * spacing, y = origin.y + j * spacing",
+   "rowOrder": "row j = 0 is the south edge (y = origin.y); rows run north",
+   "triangulation": "each cell (i,j) splits along its SW-NE diagonal: (i,j) (i+1,j) (i+1,j+1) and (i,j) (i+1,j+1) (i,j+1), counter-clockwise from above; the bake used exactly these triangles",
+   "paint": "seattle",
+   "normals": {
+    "rule": "smooth per-vertex normals, never the triangles' face normals (the bake used exactly these: custom split normals on every tier mesh)",
+    "formula": "n(i,j) = normalize(-dz/dx, -dz/dy, 1) with central differences: dz/dx = (z[i+1,j] - z[i-1,j]) / (2 spacing), dz/dy = (z[i,j+1] - z[i,j-1]) / (2 spacing); one-sided (z[i+1] - z[i]) / spacing at the grid edges (numpy.gradient)",
+    "note": "the light is baked, so the runtime needs normals only for anything it lights live on the terrain; the diagonal ridges in the mountain's relief are mountain.ts's own 'rough' term (periods of about 12 cells), not facets"
+   }
+  },
+  "tiers": [
+   {
+    "name": "near",
+    "rect": [
+     -1800,
+     -7000,
+     8700,
+     3500
+    ],
+    "size": [
+     1312,
+     1312
+    ],
+    "texelFt": [
+     8.003,
+     8.003
+    ],
+    "albedo": "terrain-albedo-near.webp",
+    "albedoSize": [
+     3072,
+     3072
+    ],
+    "light": {
+     "sun": "terrain-light-sun-near.webp",
+     "sky": "terrain-light-sky-near.webp"
+    },
+    "uv": "u = (x - rect.x0) / (rect.x1 - rect.x0), v = (rect.y1 - y) / (rect.y1 - rect.y0), image row 0 = the north edge (the usual top-left image origin; texel centres at (i + 0.5) / size)"
+   },
+   {
+    "name": "valley",
+    "rect": [
+     -29400,
+     -34600,
+     36300,
+     31100
+    ],
+    "size": [
+     2053,
+     2053
+    ],
+    "texelFt": [
+     32.0019,
+     32.0019
+    ],
+    "albedo": "terrain-albedo-valley.webp",
+    "albedoSize": [
+     2053,
+     2053
+    ],
+    "light": {
+     "sun": "terrain-light-sun-valley.webp",
+     "sky": "terrain-light-sky-valley.webp"
+    },
+    "uv": "u = (x - rect.x0) / (rect.x1 - rect.x0), v = (rect.y1 - y) / (rect.y1 - rect.y0), image row 0 = the north edge (the usual top-left image origin; texel centres at (i + 0.5) / size)"
+   },
+   {
+    "name": "far",
+    "rect": [
+     -72000,
+     -46000,
+     72000,
+     44000
+    ],
+    "size": [
+     1125,
+     703
+    ],
+    "texelFt": [
+     128.0,
+     128.0228
+    ],
+    "albedo": "terrain-albedo-far.webp",
+    "albedoSize": [
+     1125,
+     703
+    ],
+    "light": {
+     "sun": "terrain-light-sun-far.webp",
+     "sky": "terrain-light-sky-far.webp"
+    },
+    "uv": "u = (x - rect.x0) / (rect.x1 - rect.x0), v = (rect.y1 - y) / (rect.y1 - rect.y0), image row 0 = the north edge (the usual top-left image origin; texel centres at (i + 0.5) / size)"
+   }
+  ],
+  "detail": null,
+  "note": "the terrain has no UVs: sample each tier by world xy; use the finest tier that covers the point"
+ },
+ "gltfAxes": "every GLB is standard glTF, y up: glTF (x, y, z) = world (x east, z up, -y north). Put the GLB scenes under one node rotated +90 deg about x (world = (gx, -gz, gy)) to bring them into the world's z-up axes, or run the whole scene y-up",
+ "land": {
+  "file": "land.glb",
+  "light": {
+   "sun": "land-light-sun.webp",
+   "sky": "land-light-sky.webp"
+  },
+  "decals": "one mesh per land layer (node name decal-<layer>), flat at the layer's z, COLOR_0 per corner (linear); no normals (they face up); their light is the terrain tiers' by world xy; material extras carry the layer, its material id, z and its tiled detail",
+  "buildings": "nodes 'buildings', 'buildings-1', ...: the hangars, T-hangars, windsock and solids merged and slimmed to the land budget (land.budget; content/art/render/land_budget.py), split into pieces of under 65,536 vertices (16-bit indices), COLOR_0 per corner, no NORMAL (lit by the lightmap alone), lightmap UV in TEXCOORD_1 (TEXCOORD_0 is the same accessor) -> land.light (land-light-sun.webp, land-light-sky.webp)",
+  "detail": {
+   "apron": {
+    "texture": "Gravel023",
+    "tileFt": 40,
+    "strength": 0.2,
+    "roughness": 0.85
+   },
+   "asphalt": {
+    "texture": "Asphalt031",
+    "tileFt": 30,
+    "strength": 0.3,
+    "roughness": 0.7
+   },
+   "concrete": {
+    "texture": "Asphalt031",
+    "tileFt": 40,
+    "strength": 0.12,
+    "roughness": 0.8
+   },
+   "meadow": {
+    "texture": "Grass004",
+    "tileFt": 140,
+    "strength": 0.25,
+    "roughness": 0.95
+   },
+   "mown": {
+    "texture": "Grass004",
+    "tileFt": 60,
+    "strength": 0.18,
+    "roughness": 0.9
+   },
+   "paint": {
+    "texture": null,
+    "tileFt": 0,
+    "strength": 0,
+    "roughness": 0.6
+   },
+   "roof-flat": {
+    "texture": null,
+    "tileFt": 0,
+    "strength": 0,
+    "roughness": 0.7
+   },
+   "sand": {
+    "texture": "Gravel023",
+    "tileFt": 25,
+    "strength": 0.12,
+    "roughness": 0.95
+   },
+   "surf": {
+    "texture": null,
+    "tileFt": 0,
+    "strength": 0,
+    "roughness": 0.8
+   },
+   "yellow": {
+    "texture": null,
+    "tileFt": 0,
+    "strength": 0,
+    "roughness": 0.6
+   }
+  },
+  "detailFormula": "albedo = COLOR_0 x mix(1 - 2 strength, 1 + 2 strength, detail(content/art/textures/<texture>/detail.png at world xy / tileFt))",
+  "meshes": [
+   {
+    "name": "decal-airport",
+    "verts": 119,
+    "tris": 192,
+    "quantStepFt": 0.07324330510414283
+   },
+   {
+    "name": "decal-apron",
+    "verts": 15,
+    "tris": 16,
+    "quantStepFt": 0.014343480582894636
+   },
+   {
+    "name": "decal-area-beach",
+    "verts": 148,
+    "tris": 147,
+    "quantStepFt": 0.32440680552376594
+   },
+   {
+    "name": "decal-area-green",
+    "verts": 10723,
+    "tris": 12200,
+    "quantStepFt": 1.0031433585107195
+   },
+   {
+    "name": "decal-area-sand",
+    "verts": 19,
+    "tris": 14,
+    "quantStepFt": 0.005951018539711604
+   },
+   {
+    "name": "decal-crosswalks",
+    "verts": 1269,
+    "tris": 655,
+    "quantStepFt": 0.10567178514462691
+   },
+   {
+    "name": "decal-lanes",
+    "verts": 1022,
+    "tris": 790,
+    "quantStepFt": 0.30368199900339515
+   },
+   {
+    "name": "decal-lanes-yellow",
+    "verts": 808,
+    "tris": 599,
+    "quantStepFt": 0.29820554498550395
+   },
+   {
+    "name": "decal-markings",
+    "verts": 366,
+    "tris": 212,
+    "quantStepFt": 0.13875028610666057
+   },
+   {
+    "name": "decal-piers",
+    "verts": 1207,
+    "tris": 899,
+    "quantStepFt": 0.5926955032377738
+   },
+   {
+    "name": "decal-ponds",
+    "verts": 2236,
+    "tris": 2195,
+    "quantStepFt": 1.6082856488899062
+   },
+   {
+    "name": "decal-real-aprons",
+    "verts": 681,
+    "tris": 1056,
+    "quantStepFt": 0.4874799725337606
+   },
+   {
+    "name": "decal-real-taxiways",
+    "verts": 3086,
+    "tris": 3480,
+    "quantStepFt": 0.5636881175135424
+   },
+   {
+    "name": "decal-roads",
+    "verts": 10207,
+    "tris": 9092,
+    "quantStepFt": 0.5962813584821088
+   },
+   {
+    "name": "decal-runway",
+    "verts": 64,
+    "tris": 62,
+    "quantStepFt": 0.1390859845883879
+   },
+   {
+    "name": "decal-sidewalks",
+    "verts": 1386,
+    "tris": 1038,
+    "quantStepFt": 0.28086824132619975
+   },
+   {
+    "name": "decal-streets",
+    "verts": 9172,
+    "tris": 7641,
+    "quantStepFt": 0.36376439772163727
+   },
+   {
+    "name": "decal-taxi-paint",
+    "verts": 71,
+    "tris": 52,
+    "quantStepFt": 0.044464789806973375
+   },
+   {
+    "name": "decal-taxiways",
+    "verts": 47,
+    "tris": 38,
+    "quantStepFt": 0.04455634393835355
+   },
+   {
+    "name": "decal-wakes",
+    "verts": 64,
+    "tris": 40,
+    "quantStepFt": 0.05837946803234913
+   },
+   {
+    "name": "buildings",
+    "verts": 65532,
+    "tris": 34044,
+    "quantStepFt": 0.5415274280918593
+   },
+   {
+    "name": "buildings-1",
+    "verts": 45812,
+    "tris": 24541,
+    "quantStepFt": 0.3645380331120775
+   }
+  ],
+  "budget": {
+   "in": {
+    "faces": 30090,
+    "tris": 63823,
+    "bytes": 3245936
+   },
+   "far": {
+    "islands": 0,
+    "boxes": 0
+   },
+   "culledWalls": 2240,
+   "subPixelWalls": 276,
+   "smallFaces": 15,
+   "out": {
+    "faces": 27559,
+    "tris": 58629,
+    "bytes": 2171726,
+    "stripBytes": 1764846
+   },
+   "farFt": null,
+   "fits": false,
+   "decalBytes": 755028,
+   "coplanarMerged": 25,
+   "final": {
+    "faces": 27521,
+    "tris": 58585
+   }
+  },
+  "facades": {
+   "file": "facades.webp",
+   "cols": 4,
+   "rows": 5,
+   "cellPx": 256,
+   "cells": {
+    "fac-glass": {
+     "cell": 0,
+     "tileFt": [
+      20.0,
+      26.0
+     ],
+     "mode": "wall"
+    },
+    "fac-glass-dark": {
+     "cell": 1,
+     "tileFt": [
+      20.0,
+      26.0
+     ],
+     "mode": "wall"
+    },
+    "fac-office": {
+     "cell": 2,
+     "tileFt": [
+      20.0,
+      26.0
+     ],
+     "mode": "wall"
+    },
+    "fac-ribbon": {
+     "cell": 3,
+     "tileFt": [
+      24.0,
+      26.0
+     ],
+     "mode": "wall"
+    },
+    "fac-resi": {
+     "cell": 4,
+     "tileFt": [
+      24.0,
+      20.0
+     ],
+     "mode": "wall"
+    },
+    "fac-brick": {
+     "cell": 5,
+     "tileFt": [
+      20.0,
+      28.0
+     ],
+     "mode": "wall"
+    },
+    "fac-store": {
+     "cell": 6,
+     "tileFt": [
+      30.0,
+      16.0
+     ],
+     "mode": "wall"
+    },
+    "fac-garage": {
+     "cell": 7,
+     "tileFt": [
+      30.0,
+      20.0
+     ],
+     "mode": "wall"
+    },
+    "fac-house": {
+     "cell": 8,
+     "tileFt": [
+      24.0,
+      12.0
+     ],
+     "mode": "wall"
+    },
+    "fac-metal": {
+     "cell": 9,
+     "tileFt": [
+      24.0,
+      24.0
+     ],
+     "mode": "wall"
+    },
+    "fac-hotel": {
+     "cell": 10,
+     "tileFt": [
+      16.0,
+      20.0
+     ],
+     "mode": "wall"
+    },
+    "roof-flat": {
+     "cell": 11,
+     "tileFt": [
+      60.0,
+      60.0
+     ],
+     "mode": "roof"
+    },
+    "roof-tile": {
+     "cell": 12,
+     "tileFt": [
+      12.0,
+      12.0
+     ],
+     "mode": "roof"
+    },
+    "roof-shingle": {
+     "cell": 13,
+     "tileFt": [
+      12.0,
+      12.0
+     ],
+     "mode": "roof"
+    },
+    "helipad": {
+     "cell": 14,
+     "tileFt": [
+      1.0,
+      1.0
+     ],
+     "mode": "whole"
+    },
+    "deck-carrier": {
+     "cell": 15,
+     "tileFt": [
+      1.0,
+      1.0
+     ],
+     "mode": "whole"
+    },
+    "fac-siding": {
+     "cell": 16,
+     "tileFt": [
+      24.0,
+      12.0
+     ],
+     "mode": "wall"
+    }
+   },
+   "uv": "COLOR_0's alpha byte = the cell + 1 (0: no facade); TEXCOORD_0 (normalised uint16) = (tiles along the face / 256, tiles up the face / 64); cell c sits at column c % cols, row floor(c / cols) (row 0 at the image's top)",
+   "formula": "albedo = COLOR_0 x facades(cell, fract(tile)) for faces with u >= 0 (the cell drawn upright: its top row is the tile's top)"
+  }
+ },
+ "trees": {
+  "file": "trees.bin",
+  "count": 16800,
+  "stride": 16,
+  "layout": "per record, little-endian: kind uint8 @0, rot uint8 @1 (angle = rot / 256 x 360 deg, counter-clockwise from above about +z), scale float16 @2 (the instance's height in ft; the kit meshes are 1 ft tall), x float32 @4, y float32 @8, z float32 @12 (base)",
+  "kinds": {
+   "pine": {
+    "id": 0,
+    "source": "tree_pineTallA_detailed",
+    "tris": 134,
+    "widthAtScale1": 0.2525309920310974,
+    "depthAtScale1": 0.25624245405197144,
+    "count": 1025
+   },
+   "aspen": {
+    "id": 1,
+    "source": "tree_oak_fall",
+    "tris": 196,
+    "widthAtScale1": 0.5223724842071533,
+    "depthAtScale1": 0.6031837463378906,
+    "count": 0
+   },
+   "willow": {
+    "id": 2,
+    "source": "tree_default",
+    "tris": 114,
+    "widthAtScale1": 0.44206663966178894,
+    "depthAtScale1": 0.3828408122062683,
+    "count": 696
+   },
+   "rock": {
+    "id": 3,
+    "source": "rock_largeA",
+    "tris": 80,
+    "widthAtScale1": 3.021475315093994,
+    "depthAtScale1": 3.908989191055298,
+    "count": 0
+   },
+   "oak": {
+    "id": 4,
+    "source": "tree_oak",
+    "tris": 196,
+    "widthAtScale1": 0.5223724842071533,
+    "depthAtScale1": 0.6031837463378906,
+    "count": 910
+   },
+   "car-white": {
+    "id": 5,
+    "source": "_car",
+    "tris": 40,
+    "widthAtScale1": 3.263157844543457,
+    "depthAtScale1": 1.389473795890808,
+    "count": 3246
+   },
+   "car-silver": {
+    "id": 6,
+    "source": "_car",
+    "tris": 40,
+    "widthAtScale1": 3.263157844543457,
+    "depthAtScale1": 1.389473795890808,
+    "count": 3287
+   },
+   "car-dark": {
+    "id": 7,
+    "source": "_car",
+    "tris": 40,
+    "widthAtScale1": 3.263157844543457,
+    "depthAtScale1": 1.389473795890808,
+    "count": 3386
+   },
+   "car-red": {
+    "id": 8,
+    "source": "_car",
+    "tris": 40,
+    "widthAtScale1": 3.263157844543457,
+    "depthAtScale1": 1.389473795890808,
+    "count": 1619
+   },
+   "car-blue": {
+    "id": 9,
+    "source": "_car",
+    "tris": 40,
+    "widthAtScale1": 3.263157844543457,
+    "depthAtScale1": 1.389473795890808,
+    "count": 1632
+   },
+   "railcar-rust": {
+    "id": 10,
+    "source": "_railcar",
+    "tris": 20,
+    "widthAtScale1": 4.400000095367432,
+    "depthAtScale1": 0.7599999904632568,
+    "count": 534
+   },
+   "railcar-grey": {
+    "id": 11,
+    "source": "_railcar",
+    "tris": 20,
+    "widthAtScale1": 4.400000095367432,
+    "depthAtScale1": 0.7599999904632568,
+    "count": 239
+   },
+   "railcar-blue": {
+    "id": 12,
+    "source": "_railcar",
+    "tris": 20,
+    "widthAtScale1": 4.400000095367432,
+    "depthAtScale1": 0.7599999904632568,
+    "count": 226
+   }
+  },
+  "kit": "tree-kit.glb: one node per kind (name = kind), float positions, base centred on the origin, 1 ft tall, COLOR_0 (linear), NORMAL; lit live (sun + sky rows)",
+  "cards": {
+   "file": "tree-cards.webp",
+   "cellPx": 256,
+   "order": [
+    "pine",
+    "aspen",
+    "willow",
+    "rock",
+    "oak",
+    "car-white",
+    "car-silver",
+    "car-dark",
+    "car-red",
+    "car-blue",
+    "railcar-rust",
+    "railcar-grey",
+    "railcar-blue"
+   ],
+   "sideFt": {
+    "pine": 1.04,
+    "aspen": 1.04,
+    "willow": 1.04,
+    "rock": 3.1423343276977542,
+    "oak": 1.04,
+    "car-white": 3.3936841583251955,
+    "car-silver": 3.3936841583251955,
+    "car-dark": 3.3936841583251955,
+    "car-red": 3.3936841583251955,
+    "car-blue": 3.3936841583251955,
+    "railcar-rust": 4.576000099182129,
+    "railcar-grey": 4.576000099182129,
+    "railcar-blue": 4.576000099182129
+   },
+   "note": "one square per kind, left to right; the kind's 1 ft mesh seen from the south, orthographic, front-lit by a neutral white sun (0.8) + sky (0.35); a card of scale s is sideFt x s square, its base at baseFromBottom x s above the card's bottom edge",
+   "baseFromBottom": {
+    "pine": 0.020800000000000003,
+    "aspen": 0.020800000000000003,
+    "willow": 0.020800000000000003,
+    "rock": 0.06284668655395509,
+    "oak": 0.020800000000000003,
+    "car-white": 0.06787368316650391,
+    "car-silver": 0.06787368316650391,
+    "car-dark": 0.06787368316650391,
+    "car-red": 0.06787368316650391,
+    "car-blue": 0.06787368316650391,
+    "railcar-rust": 0.09152000198364257,
+    "railcar-grey": 0.09152000198364257,
+    "railcar-blue": 0.09152000198364257
+   }
+  },
+  "lod": "meshes near (about 3,000 ft), cards beyond; the slope forest is not instanced: it is baked into the terrain tiers (paint + shadow)"
+ },
+ "aircraft": {
+  "ace": "aircraft/cessna172-ace.glb",
+  "parked": "aircraft/cessna172-parked.glb",
+  "lit": "live: MeshStandard, one directional light at sun.dir, env from the sky gradient"
+ },
+ "bake": {
+  "samples": 64,
+  "albedoSamples": 16,
+  "forestDensity": 0.0,
+  "denoise": "sun,sky",
+  "webp": {
+   "albedoQuality": 72,
+   "lightQuality": 75,
+   "landLightQuality": 60
+  },
+  "lightEncodeError": {
+   "near": {
+    "sunRms": 0.01693645678460598,
+    "skyRms": 0.010173610411584377,
+    "sunClipped": 0.0,
+    "skyClipped": 0.004214148944080905
+   },
+   "valley": {
+    "sunRms": 0.012933113612234592,
+    "skyRms": 0.005209623835980892,
+    "sunClipped": 0.0,
+    "skyClipped": 0.008782841642408945
+   },
+   "far": {
+    "sunRms": 0.007271007169038057,
+    "skyRms": 0.004485405050218105,
+    "sunClipped": 0.0,
+    "skyClipped": 0.023907697170855065
+   },
+   "buildings": {
+    "sunRms": 0.01629619114100933,
+    "skyRms": 0.01973225548863411,
+    "sunClipped": 0.013568878173828125,
+    "skyClipped": 0.12029266357421875
+   }
+  }
+ },
+ "files": {
+  "aircraft/ace-seated.glb": {
+   "bytes": 377304,
+   "sha256": "1362507f6cdb860f5ed7f3c47fcb93911570e6641786fcbf5c79c9712c2ee69d",
+   "kind": "aircraft"
+  },
+  "aircraft/cessna172-ace.glb": {
+   "bytes": 339092,
+   "sha256": "9b164fb26206c315ff6824ab99933e53534e936a8a8d120a44144ec5da277289",
+   "kind": "aircraft"
+  },
+  "aircraft/cessna172-parked.glb": {
+   "bytes": 225304,
+   "sha256": "36b53ed6e91f68f8e38799864731c3ecab99aad5cfe94642538907c91e14d503",
+   "kind": "aircraft"
+  },
+  "aircraft/cockpit-interior.glb": {
+   "bytes": 195772,
+   "sha256": "4924deeedb8cfc56ba2be4c687e3ea83f5e4fb71f6649c71927fd99eb4dec6aa",
+   "kind": "aircraft"
+  },
+  "facades.webp": {
+   "bytes": 57924,
+   "sha256": "80fe716614961dfde1d7baa9f76a667b426bd25d416243d5e12470084aef196d",
+   "kind": "facades",
+   "colorSpace": "sRGB",
+   "uvSet": 0
+  },
+  "heights.bin": {
+   "bytes": 289562,
+   "sha256": "5d3d043a8b636da91547a2633c60e88d3fd7daaa3c150b09ce372ca93367c20b",
+   "kind": "heights"
+  },
+  "land-light-sky.webp": {
+   "bytes": 515014,
+   "sha256": "a4689dafa0ee6059489f39db35ad2baf90459e07f6767e96b56353c6f78da7d4",
+   "kind": "buildings-light-sky",
+   "colorSpace": "linear",
+   "channels": "L, the sky term",
+   "uvSet": 1
+  },
+  "land-light-sun.webp": {
+   "bytes": 300652,
+   "sha256": "f094bad87876da6572a51760b320065a4541c1b7cbda23b2f0f317180e7350c5",
+   "kind": "buildings-light-sun",
+   "colorSpace": "linear",
+   "channels": "L, the sun term",
+   "uvSet": 1
+  },
+  "land.glb": {
+   "bytes": 3359448,
+   "sha256": "8ba631fe1859b03c5e4a65b8f133c615ac230b2e4564ff7ad09fb44ef9c78c51",
+   "kind": "land",
+   "quantized": "KHR_mesh_quantization (positions uint16 + node transform, normals int8); no Draco"
+  },
+  "terrain-albedo-far.webp": {
+   "bytes": 6176,
+   "sha256": "e39bf50c2ad89847525d195081283ebf002e0073259ce59153525871b08e6397",
+   "kind": "terrain-albedo",
+   "tier": "far",
+   "colorSpace": "sRGB"
+  },
+  "terrain-albedo-near.webp": {
+   "bytes": 1165282,
+   "sha256": "a741df173198de50145918cbf6b32111a17f3ec8f1cfad41f0d078fe952acd8e",
+   "kind": "terrain-albedo",
+   "tier": "near",
+   "colorSpace": "sRGB"
+  },
+  "terrain-albedo-valley.webp": {
+   "bytes": 19808,
+   "sha256": "612ee9cb03ae322c8220b7d748e411d8282ad9383bb4a61864499bc93874abea",
+   "kind": "terrain-albedo",
+   "tier": "valley",
+   "colorSpace": "sRGB"
+  },
+  "terrain-light-sky-far.webp": {
+   "bytes": 9428,
+   "sha256": "be01bc2893b4ac7a49d1b02af908a8ba79680a445fadeb9146a053cd612c96e5",
+   "kind": "terrain-light-sky",
+   "tier": "far",
+   "colorSpace": "linear",
+   "channels": "L, the sky term"
+  },
+  "terrain-light-sky-near.webp": {
+   "bytes": 122932,
+   "sha256": "1e90136373798faf3698458c692a7ba3d03f838e4bb5953eec0ea10990f73efa",
+   "kind": "terrain-light-sky",
+   "tier": "near",
+   "colorSpace": "linear",
+   "channels": "L, the sky term"
+  },
+  "terrain-light-sky-valley.webp": {
+   "bytes": 66816,
+   "sha256": "ce8974863c5c83380678c0d8b857e8af59a3cae3b9a8e94d72bc3b2b2035b82f",
+   "kind": "terrain-light-sky",
+   "tier": "valley",
+   "colorSpace": "linear",
+   "channels": "L, the sky term"
+  },
+  "terrain-light-sun-far.webp": {
+   "bytes": 16486,
+   "sha256": "f58d8587e39fbfc9b926130aca85e81d64ed14c5c17e153f042241f3d568460a",
+   "kind": "terrain-light-sun",
+   "tier": "far",
+   "colorSpace": "linear",
+   "channels": "L, the sun term"
+  },
+  "terrain-light-sun-near.webp": {
+   "bytes": 215156,
+   "sha256": "bbbdd1f4b347cfe631210a21df959536092b548343c2d677a326f48e37c47a9c",
+   "kind": "terrain-light-sun",
+   "tier": "near",
+   "colorSpace": "linear",
+   "channels": "L, the sun term"
+  },
+  "terrain-light-sun-valley.webp": {
+   "bytes": 199310,
+   "sha256": "daf9cd8574c2e131f671e9e618beacdf501477ccf699a4c7e2ea77bc057989d6",
+   "kind": "terrain-light-sun",
+   "tier": "valley",
+   "colorSpace": "linear",
+   "channels": "L, the sun term"
+  },
+  "tree-cards.webp": {
+   "bytes": 20528,
+   "sha256": "30ca66872e42e8147df28aa4b5d2daf490416f244b726fad586c0ca076fafa77",
+   "kind": "tree-cards",
+   "colorSpace": "sRGB",
+   "cellPx": 256
+  },
+  "tree-kit.glb": {
+   "bytes": 66496,
+   "sha256": "13b8170d54b492bf7844442ab425e3ef4c230bc1b23c000cf8e8efab5b41e5c7",
+   "kind": "tree-kit",
+   "quantized": "none (float; tiny)"
+  },
+  "trees.bin": {
+   "bytes": 268800,
+   "sha256": "91af5f300180488e3973a4e87c7c6f62418d78c2eeefefc8d98f9c2a6d00012a",
+   "kind": "tree-instances"
+  }
+ },
+ "attribution": {
+  "osm": "Map data (c) OpenStreetMap contributors, ODbL 1.0 (https://www.openstreetmap.org/copyright), fetched through the Overpass API",
+  "dem": "Elevation: AWS Terrain Tiles (terrarium, zoom 12), from USGS 3DEP/SRTM, public domain"
+ },
+ "totalBytes": 7837290,
+ "totalBytesWithoutAircraft": 6699818
+}
