@@ -44,11 +44,11 @@
   },
   {
    "id": "island",
-   "name": "Island strip",
-   "dir": "island/c865992852ed",
-   "bytes": 1877373,
-   "manifestSha256": "c865992852eddd7a3bdcfd6f92bd7dfb8cdbeea641684387edf90fbac8402bdb",
-   "fieldElevationFt": 30.0
+   "name": "Catalina (Airport in the Sky)",
+   "dir": "island/2784d983f3ee",
+   "bytes": 4686826,
+   "manifestSha256": "2784d983f3ee16d3dc60fa6e32fb0b8ff68313e8aea83b71b14adc3f05b36855",
+   "fieldElevationFt": 1602.0
   },
   {
    "id": "forest",
