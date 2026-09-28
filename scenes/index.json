@@ -12,11 +12,11 @@
   },
   {
    "id": "desert",
-   "name": "Desert mesas",
-   "dir": "desert/2966aed2429f",
-   "bytes": 2665961,
-   "manifestSha256": "2966aed2429f9d5b110d709013a8fc03fe4e4cf66598ef3b31d8c932e03f09f8",
-   "fieldElevationFt": 2300.0
+   "name": "Sedona",
+   "dir": "desert/572b60156d19",
+   "bytes": 6750458,
+   "manifestSha256": "572b60156d1903e4e0ed2bbe04acd7e27391d5c40a1c8b9f9b5b251a356fc882",
+   "fieldElevationFt": 4830.0
   },
   {
    "id": "lakeside",
