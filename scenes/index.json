@@ -20,11 +20,11 @@
   },
   {
    "id": "lakeside",
-   "name": "Lakeside",
-   "dir": "lakeside/aa524e1fe864",
-   "bytes": 2700932,
-   "manifestSha256": "aa524e1fe864ad6c54980849abc4f3c7d7fe3e8bbcba8a1c2d958579f91ecab5",
-   "fieldElevationFt": 900.0
+   "name": "Lake Tahoe",
+   "dir": "lakeside/a39efe4dc9e5",
+   "bytes": 6049630,
+   "manifestSha256": "a39efe4dc9e5604f24f8470a9c8dd2baf8e65fc862cc8e4f6c4bae1532ff100b",
+   "fieldElevationFt": 6269.0
   },
   {
    "id": "city",
