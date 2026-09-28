@@ -73,6 +73,14 @@
    "bytes": 2937347,
    "manifestSha256": "a01eb2153b93fbeae4603c7ce0880788f3ef040c1c7ac932b26f7903758ef883",
    "fieldElevationFt": 700.0
+  },
+  {
+   "id": "mountain",
+   "name": "Telluride",
+   "dir": "mountain/41fe55832e62",
+   "bytes": 2478710,
+   "manifestSha256": "41fe55832e621ff321e8297857b15a8c8bc3a746137baff8f887697a0b41cf70",
+   "fieldElevationFt": 9070.0
   }
  ]
 }
