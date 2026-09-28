@@ -53,9 +53,9 @@
   {
    "id": "forest",
    "name": "North woods",
-   "dir": "forest/12c2fc7d21ca",
-   "bytes": 2196629,
-   "manifestSha256": "12c2fc7d21ca627bd6c5ad562f39b053d130cfd2b605414096ecca449991a729",
+   "dir": "forest/2368fb1ac389",
+   "bytes": 2196802,
+   "manifestSha256": "2368fb1ac389e8768c769743cbdfc9d654170deb66258f4501df3b62c5e378df",
    "fieldElevationFt": 2600.0
   },
   {
