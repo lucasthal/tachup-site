@@ -69,9 +69,9 @@
   {
    "id": "farmland",
    "name": "Farmland",
-   "dir": "farmland/707dd5ffed52",
-   "bytes": 1345752,
-   "manifestSha256": "707dd5ffed52be8f00ad9db1f42fc8d622b58e41b75dccf0da566c03ad66432d",
+   "dir": "farmland/9fe796a5f116",
+   "bytes": 1345998,
+   "manifestSha256": "9fe796a5f11618cb2ffad881c05502bb10e87acbd8a5876d2fab0bc153a561a7",
    "fieldElevationFt": 700.0
   }
  ]
