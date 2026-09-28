@@ -45,9 +45,9 @@
   {
    "id": "island",
    "name": "Island strip",
-   "dir": "island/c1dabe78f849",
-   "bytes": 1454887,
-   "manifestSha256": "c1dabe78f849bf91fe53b8aebd259bce0e51ae6efe3d320e9d5064f7bab08f6f",
+   "dir": "island/d4aa1cb9395c",
+   "bytes": 1453904,
+   "manifestSha256": "d4aa1cb9395c28004e4451b076826065404bcf076da03fd5c40f2626df45fc0d",
    "fieldElevationFt": 30.0
   },
   {
