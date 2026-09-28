@@ -37,9 +37,9 @@
   {
    "id": "delta",
    "name": "River delta",
-   "dir": "delta/a8e56605f85c",
-   "bytes": 1542037,
-   "manifestSha256": "a8e56605f85c64222ab6b8bac4ceea94a3f2463d783c1702ec58c965444201dc",
+   "dir": "delta/2535fd655883",
+   "bytes": 2383423,
+   "manifestSha256": "2535fd65588354450a33beaf69b4538c95a7ba2a0581d87630fa6a67a44f993b",
    "fieldElevationFt": 10.0
   },
   {
