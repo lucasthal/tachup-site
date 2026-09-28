@@ -4,10 +4,10 @@
  "scenes": [
   {
    "id": "coastal",
-   "name": "Coastal town",
-   "dir": "coastal/23041f4907ce",
-   "bytes": 7490874,
-   "manifestSha256": "23041f4907ceea07f0d354ee7073751bda0cf012abb69e62ce7f7d5a1791d413",
+   "name": "San Diego (Lindbergh)",
+   "dir": "coastal/8b8a5c35f61c",
+   "bytes": 7474190,
+   "manifestSha256": "8b8a5c35f61cfeae5548b68bce6a1e952c01ac5a1237b55bd8ef207991090f8e",
    "fieldElevationFt": 17.0
   },
   {
