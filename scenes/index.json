@@ -45,9 +45,9 @@
   {
    "id": "island",
    "name": "Catalina (Airport in the Sky)",
-   "dir": "island/95d678fb032c",
-   "bytes": 6517969,
-   "manifestSha256": "95d678fb032c8667c6e27093f9250ccabacebc21ad8c2dc44a1c6dc5c97800a9",
+   "dir": "island/38a93890c1c5",
+   "bytes": 6447085,
+   "manifestSha256": "38a93890c1c5d92eb44872ad29777248055e6f37e2a9415ca8d7c0475a285e46",
    "fieldElevationFt": 1602.0
   },
   {
