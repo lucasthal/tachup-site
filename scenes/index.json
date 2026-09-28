@@ -21,9 +21,9 @@
   {
    "id": "lakeside",
    "name": "Lakeside",
-   "dir": "lakeside/e0c296ebf8b1",
-   "bytes": 2267139,
-   "manifestSha256": "e0c296ebf8b11d8207afa0b6b4881b91f19f94ed256c034952eac26fedc99aff",
+   "dir": "lakeside/23d8f72ac3db",
+   "bytes": 2267065,
+   "manifestSha256": "23d8f72ac3dbcc0862ec0600928cf8dd8856a6be0223d97508e17b16cc411f4b",
    "fieldElevationFt": 900.0
   },
   {
