@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TachUp question review</title>
-<meta name="description" content="Review the first 45 TachUp questions: approve or flag each one and send the results to Lucas.">
+<title>Hangar Hobbs question review</title>
+<meta name="description" content="Review the first 45 Hangar Hobbs questions: approve or flag each one and send the results to Lucas.">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Nunito:wght@500;600;700;800&display=swap">
 <style>
 
@@ -234,7 +234,7 @@ var MEDIA = {"akts-2h-fig20":"data:image/jpeg;base64,/9j/2wBDAAcFBQYFBAcGBgYIBwc
     var text = JSON.stringify(exportObj(), null, 2);
     var file = null; try { file = new File([text], fileName(), { type: "application/json" }); } catch (e) {}
     if (navigator.share && file && navigator.canShare && navigator.canShare({ files: [file] })) {
-      try { await navigator.share({ files: [file], title: "TachUp review results", text: "TachUp review from " + state.name }); $("sendMsg").textContent = "Sent. Thanks!"; return; } catch (e) { if (e && e.name === "AbortError") return; }
+      try { await navigator.share({ files: [file], title: "Hangar Hobbs review results", text: "Hangar Hobbs review from " + state.name }); $("sendMsg").textContent = "Sent. Thanks!"; return; } catch (e) { if (e && e.name === "AbortError") return; }
     }
     var blob = new Blob([text], { type: "application/json" }); var url = URL.createObjectURL(blob);
     var link = document.createElement("a"); link.href = url; link.download = fileName(); document.body.appendChild(link); link.click(); link.remove();

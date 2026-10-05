@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A seat in Hangar Hobbs</title>
+<meta name="description" content="Your crewmate saved you a seat in Hangar Hobbs, a daily study game for the FAA written tests.">
+<meta property="og:title" content="Your crewmate saved you a seat in Hangar Hobbs">
+<meta property="og:description" content="Open the link on your iPhone to add them as a crewmate.">
+<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=B612:wght@400;700&family=B612+Mono:wght@400;700&display=swap">
+<link rel="stylesheet" href="../panel.css">
+</head>
+<body>
+<div class="wrap">
+  <a class="brand" href="../"><span class="lamp" aria-hidden="true"></span>Hangar Hobbs</a>
+
+  <main class="panel" id="invite">
+    <h1>Your crewmate saved you a seat in Hangar Hobbs</h1>
+    <p class="muted" id="lead">This is their crewmate code. Open it in the app and you fly the week together.</p>
+
+    <div class="readout" id="code" aria-live="polite" aria-label="Crewmate code">&nbsp;</div>
+
+    <div class="stack" id="actions">
+      <div class="row two">
+        <button class="btn btn-plain" id="copy" type="button">Copy the code</button>
+        <a class="btn btn-primary" id="open" href="pilotgame://crew/">Open in Hangar Hobbs</a>
+      </div>
+      <p class="small muted" style="margin: 0;">If the button does nothing, try <a id="open2" href="hangarhobbs://crew/">this link instead</a>, or open the app, tap Add a crewmate on the Hangar and type the code.</p>
+      <a class="btn btn-plain" id="store" href="https://apps.apple.com/app/id6809631860">Get Hangar Hobbs on the App Store</a>
+      <p class="small muted" style="margin: 0;">Hangar Hobbs is in testing on iPhone. If the App Store says it is not available yet, ask your crewmate for a TestFlight invite.</p>
+    </div>
+
+    <div id="nocode" hidden>
+      <p>This link has no code in it. Ask your crewmate to send it again, or ask them to read you the six characters, then tap Add a crewmate on the Hangar and type them.</p>
+      <a class="btn btn-plain" href="https://apps.apple.com/app/id6809631860">Get Hangar Hobbs on the App Store</a>
+    </div>
+  </main>
+
+  <section class="panel small">
+    <h2>What a crewmate sees</h2>
+    <p style="margin: 0;">Your name, your standing, how much of this week's plan you have flown, the units you have signed off and your last big moment. Never your test date, your answers or whether you pay. You can remove or block a crewmate at any time.</p>
+  </section>
+
+  <footer class="site"><a href="../support/">Support</a> &middot; <a href="../privacy/">Privacy</a> &middot; <a href="../terms/">Terms</a></footer>
+</div>
+<script>
+(function () {
+  // The code: ?c=K7M2PD (or ?code=), or #K7M2PD. Six characters from the app's alphabet (no 0, O, 1, I or L).
+  var params = new URLSearchParams(location.search);
+  var raw = params.get("c") || params.get("code") || location.hash.replace(/^#/, "") || "";
+  var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, "");
+  var valid = /^[A-HJKMNP-Z2-9]{6}$/.test(code);
+  if (!valid) {
+    document.getElementById("code").hidden = true;
+    document.getElementById("actions").hidden = true;
+    document.getElementById("lead").hidden = true;
+    document.getElementById("nocode").hidden = false;
+    return;
+  }
+  var shown = code.slice(0, 3) + " " + code.slice(3);
+  var el = document.getElementById("code");
+  el.textContent = shown;
+  el.setAttribute("aria-label", "Crewmate code " + code.split("").join(" "));
+  document.title = "A seat in Hangar Hobbs: " + shown;
+  document.getElementById("open").href = "pilotgame://crew/" + code;
+  document.getElementById("open2").href = "hangarhobbs://crew/" + code;
+
+  var btn = document.getElementById("copy");
+  function done() { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy the code"; }, 2000); }
+  function fallback() {
+    var t = document.createElement("textarea");
+    t.value = code; t.setAttribute("readonly", ""); t.style.position = "absolute"; t.style.left = "-9999px";
+    document.body.appendChild(t); t.select();
+    try { document.execCommand("copy"); done(); } catch (e) { btn.textContent = "Select the code to copy it"; }
+    document.body.removeChild(t);
+  }
+  btn.addEventListener("click", function () {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(code).then(done, fallback);
+    } else { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>

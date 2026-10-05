@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hangar Hobbs</title>
+<meta name="robots" content="noindex">
+<script>
+  // /crew/K7M2PD/ (a static site has no such folder) goes to /crew/?c=K7M2PD, keeping whatever base path the site is
+  // served under (/tachup-site/ today, / on a custom domain later).
+  (function () {
+    var m = location.pathname.match(/^(.*?)\/crew\/([A-Za-z0-9-]{4,12})\/?$/);
+    if (m) location.replace(m[1] + "/crew/?c=" + encodeURIComponent(m[2]));
+  })();
+</script>
+<style>
+  body { margin: 0; min-height: 100vh; background: #1A202D; color: #F2F5F9; font-family: "Segoe UI", Helvetica, Arial, sans-serif; display: flex; align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; }
+  .panel { max-width: 480px; background: #2A3447; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; padding: 24px 20px; }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { color: #B4BFD1; margin: 0; }
+  a { color: #9FD4FF; }
+</style>
+</head>
+<body>
+  <div class="panel">
+    <h1>That page is not here</h1>
+    <p>Try the <a href="/tachup-site/">Hangar Hobbs home page</a>.</p>
+  </div>
+</body>
+</html>

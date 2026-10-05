@@ -1,0 +1,92 @@
+/* Hangar Hobbs site pages in the lit-panel look: a dark instrument panel, B612 for text, B612 Mono for figures. */
+:root {
+  --bg: #1A202D;
+  --panel: #2A3447;
+  --raised: #36435A;
+  --inset: #1E2735;
+  --edge: rgba(255, 255, 255, 0.08);
+  --ink: #F2F5F9;
+  --muted: #B4BFD1;
+  --amber: #FFB547;
+  --orange: #FF7A2F;
+  --orange-deep: #D45C18;
+  --teal: #3FD9C4;
+  --link: #9FD4FF;
+  --navy: #14213A;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(ellipse at 50% -10%, #2C3950 0%, var(--bg) 60%) fixed, var(--bg);
+  color: var(--ink);
+  font-family: "B612", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+a { color: var(--link); }
+a:hover { color: var(--ink); }
+.wrap { max-width: 720px; margin: 0 auto; padding: 24px 16px 56px; }
+.brand {
+  display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink);
+  font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; font-size: 14px; margin-bottom: 20px;
+}
+.brand .lamp { width: 10px; height: 10px; border-radius: 50%; background: var(--amber); box-shadow: 0 0 10px 2px rgba(255, 181, 71, 0.55); }
+.panel {
+  background: linear-gradient(180deg, var(--raised) 0%, var(--panel) 18%);
+  border: 1px solid var(--edge);
+  border-radius: 18px;
+  padding: 24px 20px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+.panel + .panel { margin-top: 16px; }
+h1 { font-size: 26px; line-height: 1.25; margin: 0 0 8px; font-weight: 700; }
+h2 { font-size: 18px; margin: 28px 0 8px; font-weight: 700; color: var(--amber); letter-spacing: 0.02em; }
+h2:first-child { margin-top: 0; }
+h3 { font-size: 16px; margin: 18px 0 6px; }
+p, li { color: var(--ink); }
+.muted { color: var(--muted); }
+.small { font-size: 14px; }
+ul { padding-left: 20px; }
+li + li { margin-top: 4px; }
+.mono { font-family: "B612 Mono", ui-monospace, Menlo, Consolas, monospace; }
+.confirm {
+  display: inline-block; font-family: "B612 Mono", ui-monospace, monospace; font-size: 12px; font-weight: 700;
+  color: var(--navy); background: var(--amber); border-radius: 4px; padding: 0 5px; margin: 0 2px; vertical-align: 1px;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+th, td { text-align: left; vertical-align: top; padding: 8px 6px; border-bottom: 1px solid var(--edge); }
+th { color: var(--muted); font-weight: 700; }
+.readout {
+  background: var(--inset);
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.55);
+  padding: 18px 12px;
+  text-align: center;
+  font-family: "B612 Mono", ui-monospace, monospace;
+  font-weight: 700;
+  font-size: clamp(40px, 13vw, 64px);
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  text-shadow: 0 0 12px rgba(255, 181, 71, 0.55);
+  user-select: all;
+  -webkit-user-select: all;
+}
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 52px; padding: 12px 18px; border-radius: 14px; border: 0;
+  font-family: "B612", sans-serif; font-weight: 700; font-size: 17px; text-decoration: none; cursor: pointer;
+  width: 100%;
+}
+.btn-primary { background: var(--orange); color: var(--navy); box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 22px -12px rgba(212, 92, 24, 0.9); }
+.btn-primary:hover { background: #FF8C4A; color: var(--navy); }
+.btn-plain { background: var(--raised); color: var(--ink); border: 1px solid var(--edge); }
+.btn-plain:hover { background: #3E4C66; color: var(--ink); }
+.btn:focus-visible { outline: 3px solid var(--link); outline-offset: 2px; }
+.stack { display: grid; gap: 12px; margin-top: 18px; }
+.row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 520px) { .row.two { grid-template-columns: 1fr 1fr; } }
+footer.site { margin-top: 28px; font-size: 14px; color: var(--muted); text-align: center; }
+footer.site a { color: var(--muted); }
