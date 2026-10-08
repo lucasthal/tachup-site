@@ -68,11 +68,11 @@
   },
   {
    "id": "farmland",
-   "name": "Farmland",
-   "dir": "farmland/a01eb2153b93",
-   "bytes": 2937347,
-   "manifestSha256": "a01eb2153b93fbeae4603c7ce0880788f3ef040c1c7ac932b26f7903758ef883",
-   "fieldElevationFt": 700.0
+   "name": "Palouse (Pullman)",
+   "dir": "farmland/401a39dbf4f8",
+   "bytes": 5191403,
+   "manifestSha256": "401a39dbf4f813b214991f4ca3587b4f4f37d12309cfbb5e103a28cd563fb79c",
+   "fieldElevationFt": 2556.0
   }
  ]
 }
