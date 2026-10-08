@@ -13,9 +13,9 @@
   {
    "id": "desert",
    "name": "Sedona",
-   "dir": "desert/572b60156d19",
-   "bytes": 6750458,
-   "manifestSha256": "572b60156d1903e4e0ed2bbe04acd7e27391d5c40a1c8b9f9b5b251a356fc882",
+   "dir": "desert/51ec58db351c",
+   "bytes": 6795715,
+   "manifestSha256": "51ec58db351c643c469f521a06e1e04f0700e428284a73af68292df870cd62fb",
    "fieldElevationFt": 4830.0
   },
   {
