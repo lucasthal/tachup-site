@@ -32,8 +32,8 @@
   "light.sun": "sun term (its own greyscale WebP, one per tier/atlas): cos(incidence) x shadow, linear 0..1 (1 = the sun square on; baked with a sun of 1.2 deg, the fair sky's)",
   "light.sky": "sky term (its own greyscale WebP, one per tier/atlas): occlusion + one bounce under a white zenith-bright dome (CIE overcast shape), 1 = open flat ground, linear",
   "albedo": "sRGB-encoded colour of the surface with no light: the terrain tiers for the terrain, COLOR_0 (linear) for land.glb",
-  "cyclesSunPerUnit": 0.3183532624987586,
-  "domeOnFlatGround": 1.001782774925232,
+  "cyclesSunPerUnit": 0.3183532964908708,
+  "domeOnFlatGround": 1.0017828941345215,
   "checks": "sun.intensity = LOOK.sun x 0.31835 (Cycles: a sun of 1 lights a white square-on surface to 1/pi); sky.irradiance = what each sky state's own Cycles world puts on open flat white ground, measured"
  },
  "skies": {
@@ -995,43 +995,43 @@
    {
     "name": "buildings",
     "verts": 65534,
-    "tris": 41208,
+    "tris": 44706,
     "quantStepFt": 0.5155580927653163
    },
    {
     "name": "buildings-1",
-    "verts": 52165,
-    "tris": 28191,
-    "quantStepFt": 0.25376362880998704
+    "verts": 63749,
+    "tris": 34114,
+    "quantStepFt": 0.26466619995517665
    }
   ],
   "budget": {
    "in": {
-    "faces": 39288,
-    "tris": 73334,
-    "bytes": 3918208
+    "faces": 50568,
+    "tris": 84614,
+    "bytes": 4730368
    },
    "far": {
     "islands": 0,
     "boxes": 0
    },
-   "culledWalls": 1815,
+   "culledWalls": 1900,
    "subPixelWalls": 0,
    "smallFaces": 55,
    "out": {
-    "faces": 37418,
-    "tris": 69469,
-    "bytes": 2725694,
-    "stripBytes": 2281326
+    "faces": 48613,
+    "tris": 80664,
+    "bytes": 3330224,
+    "stripBytes": 2886016
    },
    "farFt": null,
    "fits": false,
    "decalBytes": 200322,
-   "coplanarMerged": 611,
-   "rockEdgesJoined": 12947,
+   "coplanarMerged": 6108,
+   "rockEdgesJoined": 23843,
    "final": {
-    "faces": 36804,
-    "tris": 69399
+    "faces": 42502,
+    "tris": 78820
    }
   },
   "facades": {
@@ -1209,7 +1209,7 @@
     "tris": 114,
     "widthAtScale1": 0.44206663966178894,
     "depthAtScale1": 0.3828408122062683,
-    "count": 5639
+    "count": 5646
    },
    "rock": {
     "id": 3,
@@ -1225,7 +1225,7 @@
     "tris": 196,
     "widthAtScale1": 0.5223724842071533,
     "depthAtScale1": 0.6031837463378906,
-    "count": 10022
+    "count": 10015
    },
    "car-white": {
     "id": 5,
@@ -1331,28 +1331,28 @@
   },
   "lightEncodeError": {
    "near": {
-    "sunRms": 0.017161356285214424,
-    "skyRms": 0.008401334285736084,
+    "sunRms": 0.017201146110892296,
+    "skyRms": 0.008293401449918747,
     "sunClipped": 0.0,
-    "skyClipped": 0.0005374149659863946
+    "skyClipped": 0.0005517006802721088
    },
    "valley": {
-    "sunRms": 0.012924762442708015,
-    "skyRms": 0.006226233206689358,
-    "sunClipped": 7.117760259124434e-07,
-    "skyClipped": 0.0043195314425873155
+    "sunRms": 0.012960757128894329,
+    "skyRms": 0.006155718583613634,
+    "sunClipped": 1.8980694024331827e-06,
+    "skyClipped": 0.004292721212277946
    },
    "far": {
-    "sunRms": 0.01206126157194376,
-    "skyRms": 0.006202229298651218,
-    "sunClipped": 2.0230757072862335e-05,
-    "skyClipped": 0.011961435119329856
+    "sunRms": 0.012119889259338379,
+    "skyRms": 0.006183797027915716,
+    "sunClipped": 2.4024024024024024e-05,
+    "skyClipped": 0.026809546388493758
    },
    "buildings": {
-    "sunRms": 0.01578626036643982,
-    "skyRms": 0.01910553127527237,
-    "sunClipped": 0.005749172634548611,
-    "skyClipped": 0.10092841254340278
+    "sunRms": 0.01605563797056675,
+    "skyRms": 0.018904145807027817,
+    "sunClipped": 0.005527920193142361,
+    "skyClipped": 0.09900622897677952
    }
   }
  },
@@ -1390,91 +1390,91 @@
    "kind": "heights"
   },
   "land-light-sky.webp": {
-   "bytes": 402592,
-   "sha256": "7c2b9bb427af89367e357a26996d50737dc8fa6d03d96d2cfac4bdd0ed7b244c",
+   "bytes": 404192,
+   "sha256": "bca87627db9d2e8f96ac0230d38d16f0346dc618996417d2b848b57be0ffa8a3",
    "kind": "buildings-light-sky",
    "colorSpace": "linear",
    "channels": "L, the sky term",
    "uvSet": 1
   },
   "land-light-sun.webp": {
-   "bytes": 258816,
-   "sha256": "559a9164f62eed3dac241dee1707d6f1138711d16d947644cb690b9119629973",
+   "bytes": 258568,
+   "sha256": "1247247a5d0826d37d34335b6eb94306f09bfbdc1df6b0fdb9fdd496dcd9aad4",
    "kind": "buildings-light-sun",
    "colorSpace": "linear",
    "channels": "L, the sun term",
    "uvSet": 1
   },
   "land.glb": {
-   "bytes": 2990836,
-   "sha256": "083f67db058053719a17ce31d518f757f568796c144d3cc74d18bb414b3c49ee",
+   "bytes": 3278996,
+   "sha256": "132713b7e8b6ab94befab13f2ecd58cfe330de1cd9b84b7d4e15364b01679ac9",
    "kind": "land",
    "quantized": "KHR_mesh_quantization (positions uint16 + node transform, normals int8); no Draco"
   },
   "terrain-albedo-far.webp": {
-   "bytes": 35738,
-   "sha256": "10dfc3b700a54d19cd06ef696a595c6bdac19a772f8ad47f6945badfc594c903",
+   "bytes": 34016,
+   "sha256": "4150c9d2ab190c48a57e74c82a09407aa2a089d9254d065dd227ef2361040fcf",
    "kind": "terrain-albedo",
    "tier": "far",
    "colorSpace": "sRGB"
   },
   "terrain-albedo-near.webp": {
-   "bytes": 949678,
-   "sha256": "6e2f88f98590b122752733478cd00078ff87d22fb02ca8bb1acb640038a97e84",
+   "bytes": 946482,
+   "sha256": "d391c6e88245909e01f5a0d283f79f830d38ae50c234b1adc3520b2b9974d381",
    "kind": "terrain-albedo",
    "tier": "near",
    "colorSpace": "sRGB"
   },
   "terrain-albedo-valley.webp": {
-   "bytes": 332388,
-   "sha256": "8cc1e75e115f5ca927b9a548148fa1af8dc5b08c74f8f2ba017c48b952dcec37",
+   "bytes": 307010,
+   "sha256": "0ce1216b62aca0fc09ebe0507a8cf199b1e514e9de5ec4d2bb1d420f17006ea1",
    "kind": "terrain-albedo",
    "tier": "valley",
    "colorSpace": "sRGB"
   },
   "terrain-light-sky-far.webp": {
-   "bytes": 14562,
-   "sha256": "f7f3c6c00b7b24a76f032b8667e9d536430988d87f6d24bf1843be7a509f8dfa",
+   "bytes": 14610,
+   "sha256": "4b099e000e414557b8fa5d23beb77797e49cc520a8347d041164b36cdd74f918",
    "kind": "terrain-light-sky",
    "tier": "far",
    "colorSpace": "linear",
    "channels": "L, the sky term"
   },
   "terrain-light-sky-near.webp": {
-   "bytes": 166456,
-   "sha256": "3a8c87f7b4c8f30e3a8e9325fc195775b82a4a3ea38d051cafa2633d98fc5941",
+   "bytes": 165818,
+   "sha256": "de656a938e0305635653a8b71c9b98d7362597855550eece9c6f3216b296ebb2",
    "kind": "terrain-light-sky",
    "tier": "near",
    "colorSpace": "linear",
    "channels": "L, the sky term"
   },
   "terrain-light-sky-valley.webp": {
-   "bytes": 81632,
-   "sha256": "a79373f92a9b13bdaa73d9dc55b0834063978265d7d6fccc932c0664440aa33b",
+   "bytes": 80198,
+   "sha256": "27978f8197a175b4fe0e34d794209a677e9df9f1e0952ceb5c33814184013839",
    "kind": "terrain-light-sky",
    "tier": "valley",
    "colorSpace": "linear",
    "channels": "L, the sky term"
   },
   "terrain-light-sun-far.webp": {
-   "bytes": 66190,
-   "sha256": "877a2dfd54a440de76dc183646b4ebb34e5557c967a9343898f3471f29fb552f",
+   "bytes": 66396,
+   "sha256": "ff352e52cd3d899bae677ec35605c5a94d2e3ca1bb945a8c778a8db4063a1731",
    "kind": "terrain-light-sun",
    "tier": "far",
    "colorSpace": "linear",
    "channels": "L, the sun term"
   },
   "terrain-light-sun-near.webp": {
-   "bytes": 524322,
-   "sha256": "cb1b79201bc40beebc0fcf6ff6cdbd69d737003f927de95ed1e08fdb986415d7",
+   "bytes": 521670,
+   "sha256": "ee83aa4d8a289f40a9bbd5e9db7e7c52e2a12c8e3489eee9c1325ead213e2ae4",
    "kind": "terrain-light-sun",
    "tier": "near",
    "colorSpace": "linear",
    "channels": "L, the sun term"
   },
   "terrain-light-sun-valley.webp": {
-   "bytes": 257666,
-   "sha256": "449914e6be8720313f89c5d0073e420201fa75656b8570324ff5e0bc76362bcf",
+   "bytes": 256028,
+   "sha256": "f33fd2d6d20056f1160967141ec056573046429a0ee5e55558d8df615fb824ae",
    "kind": "terrain-light-sun",
    "tier": "valley",
    "colorSpace": "linear",
@@ -1495,7 +1495,7 @@
   },
   "trees.bin": {
    "bytes": 256000,
-   "sha256": "ef971bc55b25991206764741fdd60a0c387e73c3ac1925b280fa29cedc0b063d",
+   "sha256": "272b91680fc40ba651d27c6c740fcd43d52700f98617d70403cfbc21c1534074",
    "kind": "tree-instances"
   }
  },
@@ -1517,6 +1517,6 @@
   "hfovDeg": 45,
   "convention": "a per-scene overview camera: positionFt and targetFt in the scene's frame (feet; x along runway 27's approach end, y 90 degrees left of it, z up from the field), hfovDeg across the 390 x 844 design screen, the target at the screen's centre, the horizon level (no roll); the six lap cameras stay the app's own"
  },
- "totalBytes": 7900518,
- "totalBytesWithoutAircraft": 6763046
+ "totalBytes": 8153626,
+ "totalBytesWithoutAircraft": 7016154
 }
