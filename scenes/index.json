@@ -36,11 +36,11 @@
   },
   {
    "id": "delta",
-   "name": "River delta",
-   "dir": "delta/2535fd655883",
-   "bytes": 2383423,
-   "manifestSha256": "2535fd65588354450a33beaf69b4538c95a7ba2a0581d87630fa6a67a44f993b",
-   "fieldElevationFt": 10.0
+   "name": "New Orleans Lakefront",
+   "dir": "delta/d4e6c9f8eb56",
+   "bytes": 7423552,
+   "manifestSha256": "d4e6c9f8eb5662cee417502c6074cdaebe4bbdba9ff59682c0a034397a769b7c",
+   "fieldElevationFt": 8.0
   },
   {
    "id": "island",
