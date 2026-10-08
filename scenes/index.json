@@ -52,11 +52,11 @@
   },
   {
    "id": "forest",
-   "name": "North woods",
-   "dir": "forest/2368fb1ac389",
-   "bytes": 2196802,
-   "manifestSha256": "2368fb1ac389e8768c769743cbdfc9d654170deb66258f4501df3b62c5e378df",
-   "fieldElevationFt": 2600.0
+   "name": "Jackson Hole",
+   "dir": "forest/bc62e053a0da",
+   "bytes": 4103787,
+   "manifestSha256": "bc62e053a0da09d44f4fae403085c1a4666d328ef3e954ab3cce462c87c3e814",
+   "fieldElevationFt": 6451.0
   },
   {
    "id": "prairie",
